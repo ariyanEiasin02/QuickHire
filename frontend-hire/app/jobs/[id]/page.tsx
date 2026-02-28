@@ -19,8 +19,6 @@ export default async function JobDetailPage({ params }: PageProps) {
 
   return (
     <div className="qh-job-detail">
-      <Navbar />
-
       <div className="jd-hero">
         <div className="container">
           <div className="jd-hero__inner">

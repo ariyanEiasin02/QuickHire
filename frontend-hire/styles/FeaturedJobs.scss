@@ -126,8 +126,6 @@
         margin-top: 6px;
       }
     }
-
-    // Tags row
     &__tags {
       display: flex;
       align-items: center;
@@ -135,8 +133,6 @@
       gap: 8px;
     }
   }
-
-  // ── Responsive ───────────────────────────────────────────────
   @media (max-width: 1199px) {
     .featured-grid {
       grid-template-columns: repeat(3, 1fr);
