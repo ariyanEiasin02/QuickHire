@@ -1,0 +1,135 @@
+@use "variables" as *;
+
+.qh-latest-jobs {
+  padding: 0 0 80px;
+  background: #F8F8FD;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 34px,
+        rgba(70, 64, 222, 0.06) 34px,
+        rgba(70, 64, 222, 0.06) 35px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 34px,
+        rgba(70, 64, 222, 0.06) 34px,
+        rgba(70, 64, 222, 0.06) 35px
+      );
+    pointer-events: none;
+    z-index: 0;
+  }
+  .latest-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .latest-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .latest-card {
+    display: flex;
+    gap: 16px;
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, 0.07);
+    border-radius: 8px;
+    padding: 20px 24px;
+    text-decoration: none;
+
+    .company-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    &__info {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .latest-job-title {
+        font-family: $clash-display;
+        font-size: 18px;
+        font-weight: 600;
+        color: $hire-dark;
+        letter-spacing: -0.2px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+      }
+
+      .latest-job-meta {
+        font-size: 0.8rem;
+        color: $hire-dark-50;
+        margin-bottom: 8px;
+
+        .dot {
+          color: $hire-dark-30;
+        }
+      }
+
+      &__tags {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .job-tag {
+    border-radius: 80px;
+    font-size: 0.74rem;
+    padding: 3px 12px;
+    margin-right: 8px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 991px) {
+    padding: 0 0 60px;
+
+    .latest-grid {
+      grid-template-columns: 1fr;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @media (max-width: 575px) {
+    padding: 0 0 48px;
+
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .latest-card {
+      padding: 16px;
+    }
+  }
+}

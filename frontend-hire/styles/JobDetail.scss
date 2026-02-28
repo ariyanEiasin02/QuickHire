@@ -1,0 +1,393 @@
+@use "variables" as *;
+
+.qh-job-detail {
+  background: #F8F8FD;
+  min-height: 100vh;
+
+  .jd-hero {
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    padding: 40px 0 36px;
+
+    &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    &__left {
+      display: flex;
+      gap: 20px;
+    }
+
+    .jd-logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    &__meta {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      h1 {
+        font-family: $clash-display;
+        font-size: clamp(1.4rem, 3vw, 1.9rem);
+        font-weight: 600;
+        color: $hire-dark;
+        letter-spacing: -0.5px;
+        margin: 0;
+      }
+
+      .jd-company-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+
+        .jd-company {
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: $hire-dark-60;
+        }
+      }
+
+      .jd-location-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: $hire-dark-50;
+        font-size: 0.85rem;
+
+        .fi {
+          font-size: 0.9rem;
+          color: $hire-dark-40;
+          line-height: 1;
+        }
+      }
+    }
+
+    .jd-apply-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: $primary-color;
+      color: #fff;
+      font-family: $clash-display;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      flex-shrink: 0;
+      i{
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .jd-body {
+    padding: 48px 0 80px;
+
+    .jd-grid {
+      display: grid;
+      grid-template-columns: 1fr 440px;
+      gap: 32px;
+      align-items: start;
+    }
+  }
+
+  .jd-main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .jd-section {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    padding: 32px;
+
+    h2 {
+      font-family: $clash-display;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: $hire-dark;
+      letter-spacing: -0.3px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: $hire-dark-70;
+      line-height: 1.75;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 0.9rem;
+        color: $hire-dark-70;
+        line-height: 1.6;
+
+        .li-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: $primary-color;
+          flex-shrink: 0;
+          margin-top: 7px;
+        }
+      }
+    }
+  }
+
+  .jd-tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .job-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 4px;
+
+    &--marketing { color: #ffb836; background: rgba(255, 184, 54, 0.1); }
+    &--design    { color: #56cdad; background: rgba(86, 205, 173, 0.1); }
+    &--business  { color: #4640de; background: rgba(70, 64, 222, 0.1);  }
+    &--technology{ color: #ff6550; background: rgba(255, 101, 80, 0.1); }
+  }
+
+  .jd-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &__card {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    &__title {
+      font-family: $clash-display;
+      font-size: 1rem;
+      font-weight: 700;
+      color: $hire-dark;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  .jd-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .info-icon {
+        width: 36px;
+        height: 36px;
+        background: rgba(70, 64, 222, 0.08);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        .fi {
+          color: $primary-color;
+          font-size: 0.9rem;
+          line-height: 1;
+        }
+      }
+
+      .info-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        .info-label {
+          font-size: 0.75rem;
+          color: $hire-dark-40;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.4px;
+        }
+
+        .info-value {
+          font-size: 0.875rem;
+          font-weight: 600;
+          color: $hire-dark;
+          font-family: $clash-display;
+        }
+      }
+    }
+  }
+
+  .jd-about-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .al-label {
+        color: $hire-dark-50;
+      }
+
+      .al-value {
+        font-weight: 600;
+        color: $hire-dark;
+        font-family: $clash-display;
+        font-size: 0.85rem;
+      }
+
+      a.al-value {
+        color: $primary-color;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .jd-apply-section {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px;
+
+    h3 {
+      font-family: $clash-display;
+      font-size: 1rem;
+      font-weight: 700;
+      color: $hire-dark;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 0.82rem;
+      color: rgba(0, 0, 0, 0.7);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .apply-form {
+      .input-wrap {
+        background:transparent;
+        border-color: rgba(0, 0, 0, 0.2);
+
+        &:focus-within {
+          border-color: rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-icon { color: rgba(0, 0, 0, 0.5); }
+        input, textarea { color: #000; }
+        input::placeholder, textarea::placeholder { color: rgba(0, 0, 0, 0.4); }
+      }
+
+      label {
+        color: rgba(0, 0, 0, 0.8);
+      }
+
+      .apply-submit {
+        background: $primary-color;
+        color: #fff;
+
+        &:hover {
+          background: #eef0ff;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .jd-body .jd-grid {
+      grid-template-columns: 1fr 300px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .jd-body .jd-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .jd-sidebar {
+      order: -1;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .jd-hero__left {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .jd-hero__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .jd-apply-btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .jd-section {
+      padding: 20px;
+    }
+  }
+}

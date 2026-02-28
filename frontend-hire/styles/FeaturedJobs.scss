@@ -1,0 +1,169 @@
+@use "variables" as *;
+
+.job-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 80px;
+  border: 1.5px solid transparent;
+  background: transparent;
+  line-height: 1.4;
+  white-space: nowrap;
+
+  &--marketing {
+    color: #FFB836;
+    border-color: #FFB836;
+    background: rgba(255, 184, 54, 0.08);
+  }
+
+  &--design {
+    color: #56CDAD;
+    border-color: #56CDAD;
+    background: rgba(86, 205, 173, 0.08);
+  }
+
+  &--business {
+    color: #4640DE;
+    border-color: #4640DE;
+    background: rgba(70, 64, 222, 0.08);
+  }
+
+  &--technology {
+    color: #FF6550;
+    border-color: #FF6550;
+    background: rgba(255, 101, 80, 0.08);
+  }
+
+  &--engineering {
+    color: #4640DE;
+    border-color: #4640DE;
+    background: rgba(70, 64, 222, 0.08);
+  }
+}
+
+.company-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  font-family: $clash-display;
+  letter-spacing: -0.5px;
+}
+
+.qh-featured-jobs {
+  padding: 72px 0 60px;
+  background: #F8F8F8;
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .job-card {
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-decoration: none;
+    &__top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      .job-type {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: $primary-color;
+        border: 1.5px solid $primary-color;
+        border-radius: 4px;
+        padding: 3px 10px;
+        background: rgba(70, 64, 222, 0.06);
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+    }
+    &__body {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+
+      .job-title {
+        font-family: $clash-display;
+        font-size: 18px;
+        font-weight: 600;
+        color: $hire-dark;
+        letter-spacing: -0.2px;
+      }
+
+      .job-meta {
+        font-size: 0.82rem;
+        color: $hire-dark-50;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        .dot {
+          color: $hire-dark-40;
+        }
+      }
+
+      .job-desc {
+        font-size: 0.82rem;
+        color: $hire-dark-50;
+        line-height: 1.55;
+        margin-top: 6px;
+      }
+    }
+
+    // Tags row
+    &__tags {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  }
+
+  // ── Responsive ───────────────────────────────────────────────
+  @media (max-width: 1199px) {
+    .featured-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 991px) {
+    padding: 56px 0 48px;
+
+    .featured-grid {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 16px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    padding: 40px 0 36px;
+
+    .featured-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+  }
+}

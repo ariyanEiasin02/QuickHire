@@ -1,13 +1,17 @@
 import Navbar from "@/components/Home/Navbar";
 import Hero from "@/components/Home/Hero";
-import SectionTop from "@/components/Common/SectionTop";
+import FeaturedJobs from "@/components/Home/FeaturedJobs";
+import LatestJobs from "@/components/Home/LatestJobs";
+import Footer from "@/components/Home/Footer";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <Hero />
-      <SectionTop />
+      <FeaturedJobs />
+      <LatestJobs />
+      <Footer />
     </>
   );
 }
