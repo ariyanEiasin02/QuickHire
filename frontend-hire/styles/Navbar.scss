@@ -1,0 +1,142 @@
+@use "variables" as *;
+
+.qh-navbar {
+  background-color: #F8F8FD;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  .navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+  }
+  .qh-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li a {
+      font-family: $hire-font;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: $hire-dark-70;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  .qh-auth {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .btn-login {
+      font-family: $hire-font;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: $primary-color;
+      background: transparent;
+      border: none;
+      padding: 8px 18px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+
+    .btn-signup {
+      font-family: $hire-font;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #fff;
+      background-color: $primary-color;
+      border: none;
+      padding: 9px 22px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+
+      &:hover {
+        background-color: darken(#004fac, 8%);
+        transform: translateY(-1px);
+      }
+    }
+  }
+  .qh-toggler {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    flex-direction: column;
+    gap: 5px;
+
+    span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: $hire-dark;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+  }
+  .qh-mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: 12px 0 20px;
+    gap: 4px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+
+    &.open {
+      display: flex;
+    }
+
+    li {
+      list-style: none;
+
+      a {
+        display: block;
+        padding: 10px 4px;
+        font-family: $hire-font;
+        font-size: 0.9375rem;
+        font-weight: 500;
+        color: $hire-dark-70;
+        text-decoration: none;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    .mobile-auth {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+  }
+  @media (max-width: 991px) {
+    .qh-nav-links,
+    .qh-auth {
+      display: none;
+    }
+
+    .qh-toggler {
+      display: flex;
+    }
+  }
+}

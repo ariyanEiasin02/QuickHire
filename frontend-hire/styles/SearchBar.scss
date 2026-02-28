@@ -1,0 +1,327 @@
+@import "./variables";
+
+.qh-searchbar {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: $sb-radius;
+  box-shadow: $sb-shadow;
+  height: $sb-height;
+  overflow: visible;   
+  position: relative;
+  .sb-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+    padding: 0 18px;
+    cursor: text;
+    border-radius: $sb-radius 0 0 $sb-radius;
+    transition: background 0.15s;
+
+    &.active {
+      background: #f8f9ff;
+    }
+
+    .sb-icon {
+      color: $hire-dark-40;
+      font-size: 1rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    input,
+    .sb-loc-text {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: $hire-font;
+      font-size: 0.875rem;
+      color: $hire-dark;
+      width: 100%;
+
+      &::placeholder {
+        color: $hire-dark-40;
+      }
+    }
+
+    .sb-loc-text {
+      white-space: nowrap;
+      flex: 1;
+      cursor: pointer;
+    }
+
+    .sb-chevron {
+      color: $hire-dark-40;
+      font-size: 0.82rem;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+
+      &.rotated {
+        transform: rotate(180deg);
+      }
+    }
+
+    .sb-clear {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      color: $hire-dark-40;
+      font-size: 1rem;
+      line-height: 1;
+      flex-shrink: 0;
+      transition: color 0.15s;
+
+      &:hover {
+        color: $hire-dark-70;
+      }
+    }
+  }
+  .sb-keyword {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    height: 100%;
+
+    .sb-input-wrap {
+      width: 100%;
+      border-radius: $sb-radius 0 0 $sb-radius;
+    }
+  }
+
+  .sb-divider {
+    width: 1px;
+    height: 28px;
+    background: $sb-border;
+    flex-shrink: 0;
+  }
+
+  .sb-location {
+    position: relative;
+    height: 100%;
+    flex-shrink: 0;
+
+    .sb-input-wrap {
+      min-width: 178px;
+      padding: 0 14px 0 16px;
+      border-radius: 0;
+      cursor: pointer;
+
+      &:hover {
+        background: $sb-hover-bg;
+      }
+    }
+  }
+
+  .sb-btn {
+    background-color: $primary-color;
+    color: #fff;
+    font-family: $hire-font;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border: none;
+    padding: 0 26px;
+    height: 100%;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    border-radius: 0 $sb-radius $sb-radius 0;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #003d88;
+    }
+
+    &:active {
+      background-color: #002e6b;
+    }
+  }
+
+  .sb-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: $sb-drop-shadow;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    min-width: 320px;
+    z-index: 500;
+    padding: 8px 0;
+    animation: sbDropIn 0.18s ease;
+
+    &--loc {
+      min-width: 220px;
+    }
+
+    .sb-group {
+      padding: 6px 0 4px;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        margin-bottom: 4px;
+        padding-bottom: 8px;
+      }
+    }
+
+    .sb-group-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: $hire-font;
+      font-size: 0.73rem;
+      font-weight: 700;
+      color: $hire-dark-40;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 4px 16px 8px;
+
+      .fi {
+        font-size: 0.82rem;
+      }
+    }
+
+    .sb-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 9px 16px;
+      background: transparent;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      font-family: $hire-font;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: $hire-dark-70;
+      transition: background 0.14s, color 0.14s;
+      border-radius: 6px;
+
+      &:hover {
+        background: $sb-hover-bg;
+        color: $primary-color;
+
+        .sb-item-icon {
+          color: $primary-color;
+        }
+      }
+
+      &--selected {
+        color: $primary-color;
+        background: #f0f5ff;
+
+        .sb-item-icon {
+          color: $primary-color;
+        }
+      }
+
+      &--recent {
+        color: $hire-dark-60;
+      }
+
+      .sb-item-icon {
+        font-size: 0.9rem;
+        color: $hire-dark-40;
+        flex-shrink: 0;
+        transition: color 0.14s;
+      }
+
+      .sb-item-label {
+        flex: 1;
+      }
+
+      .sb-item-type {
+        font-size: 0.74rem;
+        color: $hire-dark-40;
+        font-weight: 400;
+        background: rgba(0, 0, 0, 0.04);
+        padding: 2px 8px;
+        border-radius: 20px;
+        margin-left: auto;
+        white-space: nowrap;
+      }
+
+      .sb-item-check {
+        color: $primary-color;
+        font-size: 0.85rem;
+        margin-left: auto;
+      }
+    }
+
+    .sb-empty {
+      padding: 10px 16px;
+      font-family: $hire-font;
+      font-size: 0.85rem;
+      color: $hire-dark-40;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 991px) {
+    flex-direction: column;
+    height: auto;
+    border-radius: $sb-radius;
+    width: 100%;
+
+    .sb-keyword {
+      width: 100%;
+      border-bottom: 1px solid $sb-border;
+
+      .sb-input-wrap {
+        height: 54px;
+        border-radius: $sb-radius $sb-radius 0 0;
+      }
+    }
+
+    .sb-divider {
+      display: none;
+    }
+
+    .sb-location {
+      width: 100%;
+      border-bottom: 1px solid $sb-border;
+
+      .sb-input-wrap {
+        height: 54px;
+        width: 100%;
+        border-radius: 0;
+        min-width: unset;
+
+        .sb-loc-text {
+          white-space: normal;
+        }
+      }
+    }
+
+    .sb-btn {
+      width: 100%;
+      height: 52px;
+      border-radius: 0 0 $sb-radius $sb-radius;
+    }
+
+    .sb-dropdown {
+      min-width: unset;
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .sb-location .sb-input-wrap {
+      min-width: unset;
+    }
+  }
+}
+
+@keyframes sbDropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

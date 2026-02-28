@@ -1,0 +1,28 @@
+@use "variables" as *;
+
+body {
+  font-family: $hire-font;
+  overflow-x: hidden;
+  background-color: #F8F8FD;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.container {
+  max-width: 1200px !important;
+  margin: 0 auto;
+}
