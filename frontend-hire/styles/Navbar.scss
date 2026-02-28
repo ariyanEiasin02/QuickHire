@@ -22,7 +22,6 @@
     padding: 0;
 
     li a {
-      font-family: $hire-font;
       font-size: 0.9375rem;
       font-weight: 500;
       color: $hire-dark-70;
@@ -40,7 +39,6 @@
     gap: 12px;
 
     .btn-login {
-      font-family: $hire-font;
       font-size: 0.9375rem;
       font-weight: 600;
       color: $primary-color;
@@ -57,7 +55,6 @@
     }
 
     .btn-signup {
-      font-family: $hire-font;
       font-size: 0.9375rem;
       font-weight: 600;
       color: #fff;
@@ -110,7 +107,6 @@
       a {
         display: block;
         padding: 10px 4px;
-        font-family: $hire-font;
         font-size: 0.9375rem;
         font-weight: 500;
         color: $hire-dark-70;

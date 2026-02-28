@@ -1,7 +1,7 @@
 @use "variables" as *;
 
 body {
-  font-family: $hire-font;
+  font-family: $clash-display, sans-serif;
   overflow-x: hidden;
   background-color: #F8F8FD;
 }
@@ -25,4 +25,27 @@ li {
 .container {
   max-width: 1200px !important;
   margin: 0 auto;
+}
+.section-top{
+    h2{
+        font-size: 48px;
+        font-weight: 600;
+        color: $hire-dark;
+        span{
+            color: #26A4FF;
+        }
+    }
+    a{
+        font-size: 16px;
+        font-weight: 600;
+        color: $primary-color;
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        text-decoration: none;
+        i{
+            font-size: 20px;
+            margin-top: 3px;
+        }
+    }
 }
