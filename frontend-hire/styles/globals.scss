@@ -49,3 +49,137 @@ li {
         }
     }
 }
+.job-card {
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-decoration: none;
+    &__top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      .job-type {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: $primary-color;
+        border: 1.5px solid $primary-color;
+        border-radius: 4px;
+        padding: 3px 10px;
+        background: rgba(70, 64, 222, 0.06);
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+    }
+    &__body {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+
+      .job-title {
+        font-family: $clash-display;
+        font-size: 18px;
+        font-weight: 600;
+        color: $hire-dark;
+        letter-spacing: -0.2px;
+      }
+
+      .job-meta {
+        font-size: 0.82rem;
+        color: $hire-dark-50;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        .dot {
+          color: $hire-dark-40;
+        }
+      }
+
+      .job-desc {
+        font-size: 0.82rem;
+        color: $hire-dark-50;
+        line-height: 1.55;
+        margin-top: 6px;
+      }
+    }
+    &__tags {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  }
+
+  .card {
+  background: #f4f6fb;
+  padding: 28px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:hover {
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+  }
+}
+
+.iconWrapper {
+  width: 56px;
+  height: 56px;
+  background: #eef2ff;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 24px;
+
+  img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.content {
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 12px;
+  }
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  span {
+    font-size: 14px;
+    color: #64748b;
+  }
+}
+
+.arrow {
+  font-size: 18px;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .arrow {
+  transform: translateX(6px);
+}

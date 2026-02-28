@@ -1,0 +1,58 @@
+@use "../../styles/variables" as *;
+
+.section {
+  padding: 80px 0;
+  background-color: #f8f8fd;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: $hire-dark;
+    font-family: $clash-display;
+
+    span {
+      color: #26a4ff;
+    }
+  }
+
+  .showAll {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: $hire-dark;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}

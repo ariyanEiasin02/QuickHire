@@ -1,0 +1,221 @@
+@use "variables" as *;
+
+// ─── Page Header ─────────────────────────────────────────────────────────────
+.jl-header {
+  background: linear-gradient(135deg, #f5f7ff 0%, #eaedfa 100%);
+  padding: 72px 0 56px;
+  text-align: center;
+
+  h1 {
+    font-family: $clash-display;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: $hire-dark;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+
+    span { color: $primary-color; }
+  }
+
+  > .container > p {
+    font-size: 1rem;
+    color: $hire-dark-60;
+    margin-bottom: 32px;
+  }
+}
+
+// ─── Search Bar in header ────────────────────────────────────────────────────
+.jl-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 720px;
+  margin: 0 auto;
+
+  .jlsb-input-wrap {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 0 16px;
+    border-right: 1.5px solid rgba(0, 0, 0, 0.08);
+    gap: 10px;
+    min-width: 0;
+
+    .fi {
+      color: $hire-dark-40;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 0.9rem;
+      font-family: $hire-font;
+      color: $hire-dark;
+      padding: 14px 0;
+      background: transparent;
+
+      &::placeholder { color: $hire-dark-40; }
+    }
+  }
+
+  .jlsb-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: $primary-color;
+    color: #fff;
+    font-family: $clash-display;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+    flex-shrink: 0;
+
+    &:hover { background: color-mix(in srgb, #4640DE 80%, black); }
+    .fi { font-size: 0.85rem; }
+  }
+
+  @media (max-width: 575px) {
+    flex-direction: column;
+    border-radius: 12px;
+
+    .jlsb-input-wrap {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1.5px solid rgba(0,0,0,0.08);
+    }
+
+    .jlsb-btn {
+      width: 100%;
+      justify-content: center;
+      border-radius: 0 0 12px 12px;
+    }
+  }
+}
+
+// ─── Body ────────────────────────────────────────────────────────────────────
+.jl-body {
+  padding: 48px 0 80px;
+  background: #f8f8f8;
+}
+
+// ─── Category Pills ───────────────────────────────────────────────────────────
+.jl-cats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.jl-cat-pill {
+  padding: 7px 20px;
+  border-radius: 80px;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: $hire-dark-60;
+  cursor: pointer;
+  transition: all 0.18s;
+  font-family: $hire-font;
+
+  &:hover {
+    border-color: $primary-color;
+    color: $primary-color;
+    background: rgba(70, 64, 222, 0.05);
+  }
+
+  &.active {
+    background: $primary-color;
+    color: #fff;
+    border-color: $primary-color;
+  }
+
+  &.jl-cat-clear {
+    border-color: #e53e3e;
+    color: #e53e3e;
+    background: rgba(229,62,62,0.06);
+
+    &:hover { background: rgba(229,62,62,0.12); }
+  }
+}
+
+// ─── Result count ─────────────────────────────────────────────────────────────
+.jl-count {
+  font-size: 0.85rem;
+  color: $hire-dark-50;
+  margin-bottom: 20px;
+
+  strong { color: $hire-dark; }
+}
+
+// ─── Grid tweak for jobs page ─────────────────────────────────────────────────
+.jl-grid {
+  margin-top: 0 !important;
+
+  .job-card {
+    transition: box-shadow 0.2s, transform 0.2s;
+
+    &:hover {
+      box-shadow: 0 8px 32px rgba(70, 64, 222, 0.13);
+      transform: translateY(-3px);
+    }
+  }
+}
+
+// ─── States ───────────────────────────────────────────────────────────────────
+.jl-spinner,
+.jl-empty,
+.jl-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 80px 0;
+  text-align: center;
+
+  .fi {
+    font-size: 2.5rem;
+    color: $primary-color;
+    opacity: 0.4;
+  }
+
+  h3 {
+    font-family: $clash-display;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $hire-dark;
+    margin: 0;
+  }
+
+  p { font-size: 0.9rem; color: $hire-dark-50; margin: 0; }
+
+  button {
+    margin-top: 4px;
+    padding: 9px 28px;
+    background: $primary-color;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: $clash-display;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover { background: color-mix(in srgb, #4640DE 80%, black); }
+  }
+}
+
+.jl-error { .fi { color: #e53e3e; opacity: 0.6; } }

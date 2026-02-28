@@ -38,6 +38,13 @@
     align-items: center;
     gap: 12px;
 
+    .nav-username {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: $hire-dark;
+      white-space: nowrap;
+    }
+
     .btn-login {
       font-size: 0.9375rem;
       font-weight: 600;
@@ -67,7 +74,7 @@
       transition: background-color 0.2s ease, transform 0.15s ease;
 
       &:hover {
-        background-color: darken(#004fac, 8%);
+        background-color: color-mix(in srgb, #004fac 80%, black);
         transform: translateY(-1px);
       }
     }

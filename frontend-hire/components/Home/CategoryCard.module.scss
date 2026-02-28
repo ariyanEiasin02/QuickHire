@@ -1,0 +1,111 @@
+@use "../../styles/variables" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 28px 24px;
+  background-color: $hire-light;
+  border: 1px solid $hire-border-color;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+
+  &:hover:not(.active) {
+    border-color: $primary-color;
+    box-shadow: 0 8px 28px rgba(70, 64, 222, 0.13);
+    transform: translateY(-4px);
+
+    .iconWrapper {
+      background-color: rgba(70, 64, 222, 0.07);
+      border-color: rgba(70, 64, 222, 0.25);
+    }
+
+    .footer .arrow {
+      transform: translateX(4px);
+      color: $primary-color;
+    }
+  }
+
+  &.active {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    box-shadow: 0 8px 28px rgba(70, 64, 222, 0.35);
+
+    .iconWrapper {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+
+      svg {
+        color: $hire-light;
+        stroke: $hire-light;
+      }
+    }
+
+    .title {
+      color: $hire-light;
+    }
+
+    .footer {
+      .jobs {
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      .arrow {
+        color: $hire-light;
+      }
+    }
+  }
+}
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid $hire-border-color;
+  background-color: rgba(70, 64, 222, 0.04);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+
+  svg {
+    width: 28px;
+    height: 28px;
+    color: $primary-color;
+    stroke: $primary-color;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  color: $hire-dark;
+  font-family: $clash-display;
+  margin-bottom: 10px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .jobs {
+    font-size: 14px;
+    color: $hire-dark-60;
+    font-weight: 500;
+  }
+
+  .arrow {
+    font-size: 18px;
+    font-weight: 600;
+    color: $hire-dark-60;
+    transition: transform 0.25s ease, color 0.25s ease;
+  }
+}
