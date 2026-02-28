@@ -108,10 +108,17 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               <i className="fi fi-rr-bell" />
               <span className="notif-dot" />
             </button>
-            <Link href="/dashboard/jobs" className="qh-tb-cta">
+            <button
+              className="qh-tb-cta"
+              type="button"
+              onClick={() => {
+                // Dispatch a custom event to open the job modal
+                window.dispatchEvent(new CustomEvent("open-job-modal"));
+              }}
+            >
               <i className="fi fi-rr-plus" />
               Post a job
-            </Link>
+            </button>
           </div>
         </header>
 

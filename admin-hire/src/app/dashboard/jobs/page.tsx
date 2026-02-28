@@ -25,6 +25,12 @@ const stripHtml = (html: string, maxLen = 80) => {
 };
 
 export default function JobsPage() {
+  // Listen for global open-job-modal event
+  useEffect(() => {
+    const handler = () => openCreate();
+    window.addEventListener("open-job-modal", handler);
+    return () => window.removeEventListener("open-job-modal", handler);
+  }, []);
   const [jobs, setJobs]               = useState<ApiJob[]>([]);
   const [loading, setLoading]         = useState(true);
   const [error, setError]             = useState("");

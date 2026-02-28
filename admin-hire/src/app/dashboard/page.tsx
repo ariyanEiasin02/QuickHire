@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { jobsAPI, applicationsAPI, type ApiJob, type ApiApplication } from "@/lib/api";
 
-// ── Inline bar-chart (no external deps) ───────────────────────────────────────
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 function seedBars(seed: number) {

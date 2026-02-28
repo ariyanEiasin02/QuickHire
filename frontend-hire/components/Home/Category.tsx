@@ -84,7 +84,7 @@ const Category = () => {
   return (
     <section className={styles.section}>
       <div className="container">
-       <SectionTop title="Categories" span="popular" link="/jobs" />
+       <SectionTop title="Explore by" span="Category" link="/jobs" />
         <div className={styles.grid}>
           {categories.map((cat) => (
             <CategoryCard
